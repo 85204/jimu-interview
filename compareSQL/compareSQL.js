@@ -1,6 +1,5 @@
 let fs = require("fs");
 let data = fs.readFileSync("db.test.sql", "utf-8");
-// console.log("READ FILE SYNC END");  
 let store = []
 findTable(data, store)
 data = fs.readFileSync("db.prd.sql", "utf-8");
