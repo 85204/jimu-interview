@@ -1,14 +1,19 @@
 let fs = require("fs");
-let data = fs.readFileSync("db.test.sql", "utf-8");
+let data = fs.readFileSync("db.prd.sql", "utf-8");
 let store = []
 findTable(data, store)
-data = fs.readFileSync("db.prd.sql", "utf-8");
+data = fs.readFileSync("db.test.sql", "utf-8");
 let store2 = []
 findTable(data, store2)
 let result = compareArray(store, store2)
 console.log(result)
 
 function compareArray(store, store2) {
+  if (store.length > store2.length) {
+    const temp = store
+    store = store2
+    store2 = temp
+  }
   for (let i = 0; i < store.length; i++) {
     const num = store2.findIndex((v) => v === store[i])
     if (num !== -1) {
