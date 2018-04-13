@@ -1,0 +1,14 @@
+{
+  "name": "jimu-interview",
+  "version": "0.1.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "author": "heyo",
+  "devDependencies": {},
+  "dependencies": {
+    "nightmare": "^3.0.1"
+  }
+}
